@@ -631,7 +631,6 @@ namespace LaserGRBL
 		private System.Windows.Forms.TextBox TxtAddress;
 		private System.Windows.Forms.Panel GBFile;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-		private System.Windows.Forms.NumericUpDown UDLoopCounter;
 		private System.Windows.Forms.Label LblEmulator;
 		private System.Windows.Forms.TextBox TxtEmulator;
         private UserControls.ImageButton BtnAbortProgram;
@@ -646,11 +645,12 @@ namespace LaserGRBL
         private System.Windows.Forms.Label LblFilename2;
         private System.Windows.Forms.CheckBox chkFileEnable2;
         private System.Windows.Forms.CheckBox chkFileEnable1;
-        private System.Windows.Forms.NumericUpDown UDLoopCounter2;
-        private System.Windows.Forms.NumericUpDown UDLoopCounter1;
         private System.Windows.Forms.CheckBox chkFileEnable;
         private UserControls.ImageButton BtnFileAppend;
         private UserControls.ImageButton BtnFileAppend2;
         private UserControls.ImageButton BtnFileAppend1;
+        public System.Windows.Forms.NumericUpDown UDLoopCounter;
+        public System.Windows.Forms.NumericUpDown UDLoopCounter2;
+        public System.Windows.Forms.NumericUpDown UDLoopCounter1;
     }
 }

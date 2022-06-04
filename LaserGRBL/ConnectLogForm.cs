@@ -19,7 +19,6 @@ namespace LaserGRBL
 		public ComWrapper.WrapperType currentWrapper;
 
 		GrblCore Core;
-		GrblFile File;
 		private string[] mLoadedFileName = new string[3];
 
 		public ConnectLogForm()
@@ -334,7 +333,8 @@ namespace LaserGRBL
 
 		private void UDLoopCounter_ValueChanged(object sender, EventArgs e)
 		{
-			Core.LoopCount(0, UDLoopCounter.Value);
+			Core.LoopCount(0, (int)UDLoopCounter.Value);
+			((MainForm)ParentForm).TimerUpdate();
 		}
 
 		internal void OnColorChange()
@@ -438,15 +438,17 @@ namespace LaserGRBL
 
 		private void UDLoopCounter1_ValueChanged(object sender, EventArgs e)
         {
-			Core.LoopCount(1, UDLoopCounter1.Value);
+			Core.LoopCount(1, (int)UDLoopCounter1.Value);
+			((MainForm)ParentForm).TimerUpdate();
 		}
 
-        private void UDLoopCounter2_ValueChanged(object sender, EventArgs e)
+		private void UDLoopCounter2_ValueChanged(object sender, EventArgs e)
         {
-			Core.LoopCount(2, UDLoopCounter2.Value);
+			Core.LoopCount(2, (int)UDLoopCounter2.Value);
+			((MainForm)ParentForm).TimerUpdate();
 		}
 
-        private void BtnFileAppend_Click(object sender, EventArgs e)
+		private void BtnFileAppend_Click(object sender, EventArgs e)
         {
 			Core.OpenFile(ParentForm, null, true);
 		}
@@ -464,16 +466,19 @@ namespace LaserGRBL
         private void chkFileEnable_CheckedChanged(object sender, EventArgs e)
         {
 			Core.LayerEnabled(0, chkFileEnable.Checked);
+			((MainForm)ParentForm).TimerUpdate();
 		}
 
         private void chkFileEnable1_CheckedChanged(object sender, EventArgs e)
         {
 			Core.LayerEnabled(1, chkFileEnable1.Checked);
+			((MainForm)ParentForm).TimerUpdate();
 		}
 
-        private void chkFileEnable2_CheckedChanged(object sender, EventArgs e)
+		private void chkFileEnable2_CheckedChanged(object sender, EventArgs e)
         {
 			Core.LayerEnabled(2, chkFileEnable2.Checked);
+			((MainForm)ParentForm).TimerUpdate();
 		}
-    }
+	}
 }
